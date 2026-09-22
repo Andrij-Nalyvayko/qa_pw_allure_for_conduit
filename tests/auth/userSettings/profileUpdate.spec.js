@@ -16,7 +16,7 @@ const updatedUserData = {
 };
 
 test.describe('Profile update tests', () => {
-  test('Update user profile picture', async ({ page }) => {
+  test('Add profile picture URL from settings', async ({ page }) => {
     const settingPage = new SignUpPage(page, 1);
 
     await settingPage.clickSettingButton();
@@ -28,7 +28,7 @@ test.describe('Profile update tests', () => {
 
 
 
-  test(`Update users username`, async ({ page }) => {
+  test(`Update username from setting`, async ({ page }) => {
     const settingPage = new SignUpPage(page, 1);
 
     await settingPage.clickSettingButton()
@@ -38,7 +38,7 @@ test.describe('Profile update tests', () => {
     await settingPage.clickUpdateButton();  
   })
 
-  test(`Update users bio`, async ({ page }) => {
+  test(`Add short bio from settings`, async ({ page }) => {
     const settingPage = new SignUpPage(page, 1);
 
     await settingPage.clickSettingButton()
@@ -49,7 +49,7 @@ test.describe('Profile update tests', () => {
   })
 
 
-  test(`Update users email`, async ({ page }) => {
+  test(`Update email from settings`, async ({ page }) => {
     const settingPage = new SignUpPage(page, 1);
 
     await settingPage.clickSettingButton()
@@ -61,7 +61,7 @@ test.describe('Profile update tests', () => {
 
 
 
-  test(`Update user password`, async ({ page }) => {
+  test(`Update password from setting`, async ({ page }) => {
     const settingPage = new SignUpPage(page, 1);
 
     await settingPage.clickSettingButton()

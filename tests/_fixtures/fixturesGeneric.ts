@@ -4,7 +4,7 @@ import { generateNewUserData } from '../../src/common/testData/generateNewUserDa
 import * as allure from 'allure-js-commons';
 import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
 import { rmSync } from 'node:fs';
-import path from 'node:path';
+import path from 'path';
 
 
 type UserData = ReturnType<typeof generateNewUserData>;
@@ -94,7 +94,7 @@ export const test = base.extend<
   cleanAllureResults: [
     async ( {logger}, use) => {
 
-      const allureResultsPath = path.join(process.cwd(), 'allure-results');
+      const allureResultsPath = path.resolve('allure-results');
       rmSync(allureResultsPath, { recursive: true, force: true });
       logger.debug(`Deleted allure-results folder: ${allureResultsPath}`);
       await use();
