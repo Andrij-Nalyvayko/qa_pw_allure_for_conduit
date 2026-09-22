@@ -16,18 +16,59 @@ const updatedUserData = {
 };
 
 test.describe('Profile update tests', () => {
-  test('Update users profile settings', async ({ page }) => {
+  test('Update user profile picture', async ({ page }) => {
     const settingPage = new SignUpPage(page, 1);
 
     await settingPage.clickSettingButton();
 
     await settingPage.fillPictureField(updatedUserData.urlPicture);
-    await settingPage.fillUsernameUpdField(updatedUserData.username);
-    await settingPage.fillBioField(updatedUserData.bio);
-    await settingPage.fillEmailUpdField(updatedUserData.email);
-    await settingPage.fillPasswordUpdField(updatedUserData.password);
 
     await settingPage.clickUpdateButton();
   });
+
+
+
+  test(`Update users username`, async ({ page }) => {
+    const settingPage = new SignUpPage(page, 1);
+
+    await settingPage.clickSettingButton()
+
+    await settingPage.fillUsernameUpdField(updatedUserData.username);
+
+    await settingPage.clickUpdateButton();  
+  })
+
+  test(`Update users bio`, async ({ page }) => {
+    const settingPage = new SignUpPage(page, 1);
+
+    await settingPage.clickSettingButton()
+
+     await settingPage.fillBioField(updatedUserData.bio);
+    
+    await settingPage.clickUpdateButton();  
+  })
+
+
+  test(`Update users email`, async ({ page }) => {
+    const settingPage = new SignUpPage(page, 1);
+
+    await settingPage.clickSettingButton()
+
+    await settingPage.fillEmailUpdField(updatedUserData.email);
+    
+    await settingPage.clickUpdateButton();  
+  })
+
+
+
+  test(`Update user password`, async ({ page }) => {
+    const settingPage = new SignUpPage(page, 1);
+
+    await settingPage.clickSettingButton()
+
+    await settingPage.fillPasswordUpdField(updatedUserData.password);
+    
+    await settingPage.clickUpdateButton();  
+  })
 });
 
